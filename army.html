@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Army / Bihar Police Coaching — Rohit General Studies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0B1F3F;
+      --navy-deep:#071730;
+      --gold:#F2B705;
+      --red:#C81E2C;
+      --cream:#FAF6EC;
+      --paper:#FFFCF5;
+      --ink:#1B2433;
+      --line:rgba(11,31,63,0.12);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--cream);
+      color:var(--ink);
+      overflow-x:hidden;
+    }
+    img{max-width:100%;display:block;}
+    a{text-decoration:none;color:inherit;}
+    ul{list-style:none;}
+
+    h1,h2,h3{font-family:'Archivo Black',sans-serif;}
+
+    /* ===================== HEADER (same theme) ===================== */
+    header{
+      background:linear-gradient(180deg,var(--navy-deep),var(--navy) 70%);
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:100;
+      box-shadow:0 2px 18px rgba(0,0,0,.25);
+    }
+    .topbar{
+      max-width:1240px;
+      margin:0 auto;
+      padding:14px 24px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+    .logo-wrap{
+      width:58px;height:58px;border-radius:50%;
+      flex-shrink:0;
+      border:2px solid var(--gold);
+      overflow:hidden;
+      background:#fff;
+    }
+    .logo-wrap img{width:100%;height:100%;object-fit:cover;}
+    .brand-name{
+      font-family:'Archivo Black',sans-serif;
+      font-size:clamp(1.25rem,3vw,1.9rem);
+      line-height:1.05;
+      letter-spacing:.01em;
+    }
+    .brand-name span{color:var(--gold);}
+    .brand-sub{
+      font-family:'Caveat',cursive;
+      font-weight:700;
+      color:#9fd8e0;
+      font-size:1rem;
+      margin-top:2px;
+    }
+    nav.desktop-nav{
+      margin-left:auto;
+      display:flex;
+      gap:28px;
+      font-weight:600;
+      font-size:.92rem;
+    }
+    nav.desktop-nav a{
+      position:relative;
+      padding:4px 0;
+      opacity:.92;
+    }
+    nav.desktop-nav a::after{
+      content:"";
+      position:absolute;left:0;bottom:-4px;
+      width:0%;height:2px;background:var(--gold);
+      transition:width .25s ease;
+    }
+    nav.desktop-nav a:hover::after{width:100%;}
+
+    .tagline-strip{
+      background:var(--gold);
+      color:var(--navy-deep);
+      overflow:hidden;
+      white-space:nowrap;
+      border-top:1px solid rgba(0,0,0,.08);
+      border-bottom:2px solid var(--navy-deep);
+    }
+    .tagline-track{
+      display:inline-block;
+      padding-left:100%;
+      animation:scrollLeftRight 44s linear infinite;
+      font-weight:700;
+      font-size:.85rem;
+      letter-spacing:.03em;
+      padding-top:6px;padding-bottom:6px;
+    }
+    .tagline-track span{margin:0 28px;}
+    @keyframes scrollLeftRight{
+      0%{transform:translateX(0);}
+      100%{transform:translateX(-100%);}
+    }
+
+    .mobile-menu-btn{
+      display:none;
+      margin-left:auto;
+      width:44px;
+      height:44px;
+      border:1px solid rgba(255,255,255,.35);
+      background:rgba(255,255,255,.08);
+      border-radius:12px;
+      cursor:pointer;
+      position:relative;
+    }
+    .mobile-menu-btn span{
+      position:absolute;
+      left:11px;right:11px;
+      height:3px;
+      background:var(--gold);
+      border-radius:4px;
+      transition:transform .2s ease, top .2s ease, opacity .2s ease;
+    }
+    .mobile-menu-btn span:nth-child(1){ top:14px; }
+    .mobile-menu-btn span:nth-child(2){ top:20px; }
+    .mobile-menu-btn span:nth-child(3){ top:26px; }
+
+    .mobile-menu{
+      display:none;
+      position:absolute;
+      top:82px;
+      left:0;
+      right:0;
+      background:rgba(7,23,48,.98);
+      border-top:1px solid rgba(255,255,255,.18);
+      padding:12px 18px 18px;
+      z-index:120;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .mobile-menu-link{
+      display:block;
+      padding:12px 10px;
+      border-radius:12px;
+      font-weight:800;
+      color:#fff;
+      border:1px solid transparent;
+      text-transform:lowercase;
+    }
+    .mobile-menu-link:active{transform:scale(.99);}
+    .mobile-menu-link:hover{border-color:rgba(242,183,5,.45);background:rgba(242,183,5,.12);}
+    .mobile-menu.open{display:block;}
+
+    @media(max-width:600px){
+      nav.desktop-nav{display:none;}
+      .mobile-menu-btn{display:block;}
+    }
+
+    /* ===================== HERO ===================== */
+    .hero{
+      background:
+        radial-gradient(circle at 80% 20%, rgba(242,183,5,.18), transparent 45%),
+        linear-gradient(160deg,var(--navy-deep) 0%, var(--navy) 55%, #0d2548 100%);
+      color:#fff;
+      padding:64px 24px 70px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px, transparent 1px 28px),
+        repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px, transparent 1px 28px);
+      pointer-events:none;
+    }
+    .hero-inner{
+      max-width:1240px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:34px;
+      align-items:center;
+      position:relative;
+    }
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.25);
+      padding:6px 14px;
+      border-radius:30px;
+      font-size:.78rem;
+      font-weight:700;
+      letter-spacing:.05em;
+      margin-bottom:18px;
+    }
+    .dot{width:7px;height:7px;border-radius:50%;background:#3CE07A;animation:pulse 1.6s infinite;}
+    @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+    .hero h1{
+      font-size:clamp(2.1rem,5vw,3.4rem);
+      line-height:1.06;
+      margin-bottom:14px;
+    }
+    .hero h1 em{font-style:normal;color:var(--gold);-webkit-text-stroke:1px rgba(255,255,255,.15);} 
+    .hero p.lead{font-size:1.04rem;color:#cfd9ec;max-width:600px;line-height:1.7;margin-bottom:22px;}
+    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+    .btn-primary{
+      background:var(--gold);
+      color:var(--navy-deep);
+      font-weight:900;
+      padding:14px 26px;
+      border-radius:10px;
+      box-shadow:0 5px 0 #b58300;
+      font-size:.95rem;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border:0;
+    }
+    .btn-ghost{
+      background:transparent;
+      border:2px solid rgba(255,255,255,.4);
+      color:#fff;
+      font-weight:800;
+      padding:12px 22px;
+      border-radius:10px;
+      font-size:.95rem;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .hero-right{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:18px;
+      padding:18px 16px;
+    }
+    .hero-right h3{font-size:1.2rem;margin-bottom:8px;}
+    .hero-right ul{display:flex;flex-direction:column;gap:10px;}
+    .hero-right li{display:flex;gap:10px;align-items:flex-start;color:#cfd9ec;line-height:1.6;}
+    .check{
+      width:26px;height:26px;border-radius:9px;
+      background:rgba(242,183,5,.18);
+      border:1px solid rgba(242,183,5,.35);
+      color:var(--gold);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;
+      flex-shrink:0;
+      margin-top:2px;
+    }
+
+    @media(max-width:980px){
+      .hero-inner{grid-template-columns:1fr;}
+      .hero-right{order:2;}
+    }
+
+    /* ===================== CONTENT ===================== */
+    .section{max-width:1240px;margin:0 auto;padding:34px 24px 70px;}
+    .section-head{text-align:center;margin-bottom:34px;}
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:0 10px 26px rgba(11,31,63,.06);
+      font-weight:900;
+      color:var(--navy-deep);
+      font-size:.9rem;
+    }
+    .section-head h2{font-size:clamp(1.6rem,3.4vw,2.3rem);color:var(--navy-deep);margin-top:12px;}
+    .section-head p{color:#5a6478;max-width:700px;margin:10px auto 0;line-height:1.7;}
+
+    .cards{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;}
+    .card{
+      grid-column:span 4;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px 16px;
+      box-shadow:0 10px 26px rgba(11,31,63,.05);
+      min-height:170px;
+    }
+    .card h3{color:var(--navy-deep);font-size:1.15rem;margin-bottom:8px;}
+    .card p{color:#5a6478;line-height:1.7;font-size:.95rem;}
+    .ico{
+      width:44px;height:44px;border-radius:16px;
+      background:rgba(242,183,5,.18);
+      border:1px solid rgba(242,183,5,.35);
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.2rem;
+      margin-bottom:12px;
+    }
+
+    @media(max-width:980px){
+      .card{grid-column:span 6;}
+    }
+    @media(max-width:600px){
+      .card{grid-column:span 12;}
+    }
+
+    .split{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:16px;
+      align-items:start;
+    }
+    .panel{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:0 10px 26px rgba(11,31,63,.06);
+      padding:18px 16px;
+    }
+    .panel h3{color:var(--navy-deep);font-size:1.2rem;margin-bottom:10px;}
+    .panel p{color:#5a6478;line-height:1.7;margin-bottom:12px;}
+    .bullets{display:flex;flex-direction:column;gap:10px;margin-top:8px;}
+    .bullet{display:flex;gap:10px;align-items:flex-start;}
+    .b-dot{width:22px;height:22px;border-radius:8px;background:rgba(200,30,44,.12);border:1px solid rgba(200,30,44,.25);color:var(--red);display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;margin-top:2px;}
+    .bullet span{color:#5a6478;line-height:1.6;font-size:.96rem;}
+
+    @media(max-width:980px){
+      .split{grid-template-columns:1fr;}
+    }
+
+    /* Footer */
+    footer{
+      background:var(--navy-deep);
+      color:#cfd9ec;
+      padding:60px 24px 0;
+    }
+    .footer-grid{
+      max-width:1240px;margin:0 auto;
+      display:grid;
+      grid-template-columns:1.1fr 1fr 1fr 1.3fr;
+      gap:36px;
+      padding-bottom:40px;
+      border-bottom:1px solid rgba(255,255,255,.1);
+    }
+    .footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+    .footer-brand img{width:50px;height:50px;border-radius:50%;border:2px solid var(--gold);}
+    .footer-brand b{font-family:'Archivo Black';font-size:1.05rem;color:#fff;}
+    footer p.about{font-size:.86rem;line-height:1.6;color:#9fb0d1;}
+    footer h4{color:#fff;font-size:.92rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px;}
+    footer ul li{margin-bottom:10px;font-size:.86rem;}
+    footer ul li a:hover{color:var(--gold);}
+    .contact-line{display:flex;gap:10px;margin-bottom:14px;font-size:.86rem;align-items:flex-start;}
+    .contact-line .ic{color:var(--gold);font-size:1rem;margin-top:2px;}
+    .map-box{border-radius:12px;overflow:hidden;border:2px solid rgba(255,255,255,.12);margin-top:8px;}
+    .map-box iframe{width:100%;height:170px;border:0;display:block;filter:grayscale(.15) contrast(1.05);}
+    .footer-bottom{max-width:1240px;margin:0 auto;padding:20px 0 26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.78rem;color:#8194b8;}
+    .footer-bottom b{color:var(--gold);}
+
+    @media(max-width:980px){
+      .footer-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:600px){
+      .footer-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="logo-wrap"><img src="lobo.png" alt="Rohit General Studies Logo"></div>
+    <div>
+      <div class="brand-name">ROHIT <span>GENERAL</span> STUDIES</div>
+      <div class="brand-sub">Symbol of Success</div>
+    </div>
+
+    <nav class="desktop-nav">
+      <a href="index.html">home</a>
+      <a href="about-us.html">About us</a>
+      
+      <a href="noties.html">Notices</a>
+      <a href="contact.html">Contact</a>
+      <a href="studymaterial.html">study material</a>
+      <a href="army.html">Army / Police</a>
+    </nav>
+
+    <button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html" class="mobile-menu-link">home</a>
+    <a href="about-us.html" class="mobile-menu-link">About us< <a href="#" class="mobile-menu-link">army/bihar police</a>
+    <a href="noties.html" class="mobile-menu-link">Notices</a>
+    <a href="contact.html" class="mobile-menu-link">Contact</a>
+    <a href="studymaterial.html" class="mobile-menu-link">study material</a>
+    <a href="army.html" class="mobile-menu-link">Army / Police</a>
+  </div>
+
+  <div class="tagline-strip">
+    <div class="tagline-track">
+      <span>★ ROHIT GENERAL STUDIES — Paharpur, Purvi Champaran, Bihar</span>
+      <span>★ Army & Bihar Police coaching — daily practice + guidance</span>
+      <span>★ Admission Open 2026 — Seats Limited</span>
+      <span>★ Call: 9341334077 / 9507473457</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span class="dot"></span> Army / Bihar Police Coaching</div>
+      <h1>Desh ke liye <em>Taiyar</em> karo apni preparation</h1>
+      <p class="lead">
+        Rohit General Studies me Indian Army aur Bihar Police ki preparation ke liye
+        exam-focused guidance, daily practice, aur confidence-building classes milti hain.
+        Yahan “padhai hota” nahi—<b>goal achieve</b> hota hai.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="contact.html">📞 Admission / Enquiry</a>
+        <a class="btn-ghost" href="#plan">✅ Coaching Plan</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <h3>Student ko kya milta hai?</h3>
+      <ul>
+        <li><span class="check">✓</span><span>Daily practice (MCQ/Reasoning/General Knowledge type)</span></li>
+        <li><span class="check">✓</span><span>Paper pattern samajh ke answer strategy</span></li>
+        <li><span class="check">✓</span><span>Hindi me clear explanation + doubt support</span></li>
+        <li><span class="check">✓</span><span>Regular tests aur progress tracking</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<main class="section" id="plan">
+  <div class="section-head">
+    <div class="kicker">🎯 Indian Army + Bihar Police — Exam Focus</div>
+    <h2>Coaching structure (Simple, Strong, Result)</h2>
+    <p>
+      Aapka focus GK/Reasoning/Objective-type practice aur basics clarity par rahega.
+      Classes me discipline, regularity aur doubt-solving compulsory hai.
+    </p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="ico">🧠</div>
+      <h3>Reasoning / Aptitude</h3>
+      <p>Concept + practice sets, time-bound questions, aur tricks jo exam me kaam aate hain.</p>
+    </div>
+    <div class="card">
+      <div class="ico">📚</div>
+      <h3>General Knowledge</h3>
+      <p>Daily GK updates, short notes, aur revision plan—taaki yaad rahe aur marks badhe.</p>
+    </div>
+    <div class="card">
+      <div class="ico">🗂️</div>
+      <h3>Exam Practice</h3>
+      <p>Weekly tests, model papers, aur answer-writing/attempting strategy (objective focus).</p>
+    </div>
+    <div class="card">
+      <div class="ico">💬</div>
+      <h3>Doubt Support</h3>
+      <p>Jahan stuck ho, wahi clear—Hindi me simple explanation aur repeated practice.</p>
+    </div>
+    <div class="card">
+      <div class="ico">⏱️</div>
+      <h3>Time Management</h3>
+      <p>Speed + accuracy training, easy questions first approach, aur proper revision cycles.</p>
+    </div>
+    <div class="card">
+      <div class="ico">🏅</div>
+      <h3>Motivation & Discipline</h3>
+      <p>Regular study routine, punctuality, and confidence-building habits.</p>
+    </div>
+  </div>
+
+  <div class="split">
+    <div class="panel">
+      <h3>Kaun join karein?</h3>
+      <p>
+        Army / Bihar Police type exams me interested students (apne level ke hisaab se)
+        join kar sakte hain. Aapke liye sahi starting plan banaya jaata hai.
+      </p>
+      <div class="bullets">
+        <div class="bullet"><div class="b-dot">✓</div><span>Class 9th–12th ke students + general aspirants</span></div>
+        <div class="bullet"><div class="b-dot">✓</div><span>Hindi medium students ke liye easy explanation</span></div>
+        <div class="bullet"><div class="b-dot">✓</div><span>Jo daily practice karna chahte hain</span></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Study Material Slots (PDF Download)</h3>
+      <p>
+        Neeche 2 slot diye gaye hain. Aap apni PDFs upload karke link wale section me
+        file name set kar dijiye—users tap karke direct download kar payenge.
+      </p>
+
+      <div class="bullets" style="margin-top:12px;">
+        <div class="bullet">
+          <div class="b-dot">🇮🇳</div>
+          <span>
+            <b>Indian Army PDF</b><br/>
+            <a class="dl-link" href="downloads/indian-army.pdf" download>
+              ➜ Tap to Download (placeholder)
+            </a>
+          </span>
+        </div>
+
+        <div class="bullet">
+          <div class="b-dot">🛡️</div>
+          <span>
+            <b>Bihar Police PDF</b><br/>
+            <a class="dl-link" href="downloads/bihar-police.pdf" download>
+              ➜ Tap to Download (placeholder)
+            </a>
+          </span>
+        </div>
+
+        <div class="bullet">
+          <div class="b-dot">⚙️</div>
+          <span>
+            Apni PDF file ko <b>downloads/</b> folder me daalein aur href me file name update karein.
+          </span>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a class="btn-primary" style="padding:12px 18px;" href="contact.html">➡ Enquiry Now</a>
+        <a class="btn-ghost" style="padding:12px 18px;" href="studymaterial.html">📚 Study Material</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="lobo.png" alt="logo">
+        <b>ROHIT GENERAL STUDIES</b>
+      </div>
+      <p class="about">Inarwabhar Laptahan ki ek vishwasniya coaching sansthan, Rohit Sir ke netritva mein — jahan har vidyarthi ko sahi disha milti hai.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="index.html#templates">Our Batches</a></li>
+        <li><a href="noties.html">Notices</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Coaching Focus</h4>
+      <ul>
+        <li><a href="army.html">Army / Bihar Police</a></li>
+        <li><a href="studymaterial.html">Study Material Hub</a></li>
+        <li><a href="noties.html">Updates &amp; Daily Notices</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Visit Us</h4>
+      <div class="contact-line"><span class="ic">📍</span><span>Inarwabhar Laptahan, Near Primary School, Paharpur, Purvi Champaran, Bihar</span></div>
+      <div class="contact-line"><span class="ic">📞</span><span>9341334077, 9507473457</span></div>
+      <div class="map-box">
+        <iframe
+          src="https://www.google.com/maps?q=Paharpur,Purvi+Champaran,Bihar&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Rohit General Studies — <b>Symbol of Success</b></span>
+    <span>Designed for Digital Skills &amp; A Better Future</span>
+  </div>
+</footer>
+
+<script>
+  const mobileBtn = document.querySelector('.mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      mobileBtn.setAttribute('aria-expanded', String(isOpen));
+      mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+    });
+
+    mobileMenu.querySelectorAll('.mobile-menu-link').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && e.target !== mobileBtn) {
+        mobileMenu.classList.remove('open');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
+

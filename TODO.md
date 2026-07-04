@@ -1,0 +1,5 @@
+- [x] Contact page requirements samajhna
+- [x] Repo files read karna (contact.html, style.css, index.html, about-us.html)
+- [ ] `contact.html` ko Contact-focused hero + contact cards + enquiry form + map ke saath rewrite karna
+- [ ] Agar `style.css` me contact form ke liye styles missing ho to minimal CSS add karna
+- [ ] `contact.html` ka quick visual check (browser me)
